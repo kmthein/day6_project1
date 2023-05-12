@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Form from './components/Form/Form';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
+  const [employs, setEmploys] = useState([]);
+
+  const addNewEmp = (empInfo) => {
+    setEmploys([...employs, empInfo]);
+  }
+
+  let contentSection = <p className='no-data'>No Data Found.</p>
+
+  if(employs.length > 0) {
+    contentSection =
+    <div>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+          {
+            employs.map(emp => (
+              <tr>
+                <td>{emp.id}</td>
+                <td>{emp.name}</td>
+                <td>{emp.age}</td>
+              </tr>
+            ))
+          }
+        </table>
+    </div>
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Form addNewEmp={addNewEmp} />
+      {contentSection}
     </div>
   );
 }

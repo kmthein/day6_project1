@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  background: linear-gradient(to right, rgb(238, 80, 191), rgb(194, 129, 191));
+}
+
+input {
+  margin: 10px;
+  padding: 10px 5px;
+  border: 1px solid rgb(71, 71, 71);
+  border-radius: 5px;
+  background: white;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: rgb(43, 43, 43);
+}
+
+.submit-btn {
+  padding: 10px 15px;
+  border: 2px solid rgb(75, 75, 75);
+  border-radius: 5px;
+  margin-left: 10px;
+  background: rgb(66, 66, 66);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.heading {
+  font-size: 30px;
+}
+
+th, td {
+  border-bottom: 1px solid rgb(92, 92, 92);
+  padding: 10px 0;
+  background: white;
+}
+
+td {
+  font-weight: 500;
+}
+
+table {
+  width: 55%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.theader {
+  background-color: rgb(235, 180, 180);
+}
+
+.no-data {
+  font-size: 17px;
+}
